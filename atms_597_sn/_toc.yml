@@ -1,0 +1,9 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+- file: intro
+  numbered: true
+
+- part: Getting started
+  chapters:
+  - file: compiling_expanse
+  - file: intro_to_wrf
