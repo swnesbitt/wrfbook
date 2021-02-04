@@ -5,6 +5,7 @@
 
 - part: Getting started
   chapters:
+  - file: syllabus
   - file: compiling_expanse
   - file: intro_to_wrf
   - file: wrf_ideal

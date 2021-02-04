@@ -1,4 +1,4 @@
-# Chapter 1: Getting started on `expanse`
+# Getting started on `expanse`
 
 ## How to login (after you have set up 2-Factor Authentication)
 

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Chapter 1: Getting started on expanse &#8212; Mesoscale modeling with the Weather Research and Forecasting model</title>
+    <title>2. Getting started on expanse &#8212; Mesoscale modeling with the Weather Research and Forecasting model</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -56,8 +56,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2. Introduction to WRF presentation" href="intro_to_wrf.html" />
-    <link rel="prev" title="Welcome to ATMS 597 SN, Spring 2021" href="intro.html" />
+    <link rel="next" title="3. Introduction to the WRF system" href="intro_to_wrf.html" />
+    <link rel="prev" title="1. Syllabus" href="syllabus.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -100,9 +100,14 @@
  </span>
 </p>
 <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="syllabus.html">
+   1. Syllabus
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   1. Chapter 1: Getting started on
+   2. Getting started on
    <code class="docutils literal notranslate">
     <span class="pre">
      expanse
@@ -112,7 +117,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="intro_to_wrf.html">
-   2. Introduction to WRF presentation
+   3. Introduction to the WRF system
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wrf_ideal.html">
+   4. Introduction to WRF ideal
   </a>
  </li>
 </ul>
@@ -187,12 +197,12 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#how-to-login-after-you-have-set-up-2-factor-authentication">
-   1.1. How to login (after you have set up 2-Factor Authentication)
+   2.1. How to login (after you have set up 2-Factor Authentication)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#storage-on-expanse">
-   1.2. Storage on
+   2.2. Storage on
    <code class="docutils literal notranslate">
     <span class="pre">
      expanse
@@ -202,12 +212,12 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#obtaining-and-compiling-wrf-on-expanse">
-   1.3. Obtaining and compiling WRF on expanse
+   2.3. Obtaining and compiling WRF on expanse
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#download-wrf-from-github">
-     1.3.1. Download WRF from
+     2.3.1. Download WRF from
      <code class="docutils literal notranslate">
       <span class="pre">
        github
@@ -217,19 +227,19 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#configuring-wrf">
-     1.3.2. Configuring WRF
+     2.3.2. Configuring WRF
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#compiling-wrf">
-     1.3.3. Compiling WRF
+     2.3.3. Compiling WRF
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#running-wrf-ideal-on-expanse">
-   1.4. Running WRF ideal on
+   2.4. Running WRF ideal on
    <code class="docutils literal notranslate">
     <span class="pre">
      expanse
@@ -248,10 +258,10 @@
         
               <div>
                 
-  <div class="section" id="chapter-1-getting-started-on-expanse">
-<h1><span class="section-number">1. </span>Chapter 1: Getting started on <code class="docutils literal notranslate"><span class="pre">expanse</span></code><a class="headerlink" href="#chapter-1-getting-started-on-expanse" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="getting-started-on-expanse">
+<h1><span class="section-number">2. </span>Getting started on <code class="docutils literal notranslate"><span class="pre">expanse</span></code><a class="headerlink" href="#getting-started-on-expanse" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="how-to-login-after-you-have-set-up-2-factor-authentication">
-<h2><span class="section-number">1.1. </span>How to login (after you have set up 2-Factor Authentication)<a class="headerlink" href="#how-to-login-after-you-have-set-up-2-factor-authentication" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.1. </span>How to login (after you have set up 2-Factor Authentication)<a class="headerlink" href="#how-to-login-after-you-have-set-up-2-factor-authentication" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh -l username login.xsede.org
 </pre></div>
 </div>
@@ -266,7 +276,7 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="storage-on-expanse">
-<h2><span class="section-number">1.2. </span>Storage on <code class="docutils literal notranslate"><span class="pre">expanse</span></code><a class="headerlink" href="#storage-on-expanse" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.2. </span>Storage on <code class="docutils literal notranslate"><span class="pre">expanse</span></code><a class="headerlink" href="#storage-on-expanse" title="Permalink to this headline">¶</a></h2>
 <p>There are 3 directories you can use on <code class="docutils literal notranslate"><span class="pre">expanse</span></code>.</p>
 <p>Your home directory is in</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/home/username
@@ -286,9 +296,9 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="obtaining-and-compiling-wrf-on-expanse">
-<h2><span class="section-number">1.3. </span>Obtaining and compiling WRF on expanse<a class="headerlink" href="#obtaining-and-compiling-wrf-on-expanse" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.3. </span>Obtaining and compiling WRF on expanse<a class="headerlink" href="#obtaining-and-compiling-wrf-on-expanse" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="download-wrf-from-github">
-<h3><span class="section-number">1.3.1. </span>Download WRF from <code class="docutils literal notranslate"><span class="pre">github</span></code><a class="headerlink" href="#download-wrf-from-github" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.1. </span>Download WRF from <code class="docutils literal notranslate"><span class="pre">github</span></code><a class="headerlink" href="#download-wrf-from-github" title="Permalink to this headline">¶</a></h3>
 <p>You should download your WRF code do your home directory or the shared project space.</p>
 <div class="highlight-git notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/wrf-model/WRF.git
 </pre></div>
@@ -303,7 +313,7 @@
 </div>
 </div>
 <div class="section" id="configuring-wrf">
-<h3><span class="section-number">1.3.2. </span>Configuring WRF<a class="headerlink" href="#configuring-wrf" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.2. </span>Configuring WRF<a class="headerlink" href="#configuring-wrf" title="Permalink to this headline">¶</a></h3>
 <p>We will now configure WRF for compilation.  First, we need to set up the software environment for WRF.  <code class="docutils literal notranslate"><span class="pre">expanse</span></code> uses the <code class="docutils literal notranslate"><span class="pre">modules</span></code> package to configure software.  Here is the software environment we need for WRF:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module purge
 
@@ -343,7 +353,7 @@ module load netcdf-c netcdf-cxx netcdf-fortran
 <p>Save the file and you’re good to go!</p>
 </div>
 <div class="section" id="compiling-wrf">
-<h3><span class="section-number">1.3.3. </span>Compiling WRF<a class="headerlink" href="#compiling-wrf" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">2.3.3. </span>Compiling WRF<a class="headerlink" href="#compiling-wrf" title="Permalink to this headline">¶</a></h3>
 <p>Now, you can compile WRF.  To compile the Quarter-circle hodograph supercell case on 4 processors, type</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./compile -j <span class="m">4</span> em_quarter_ss
 </pre></div>
@@ -352,7 +362,7 @@ module load netcdf-c netcdf-cxx netcdf-fortran
 </div>
 </div>
 <div class="section" id="running-wrf-ideal-on-expanse">
-<h2><span class="section-number">1.4. </span>Running WRF ideal on <code class="docutils literal notranslate"><span class="pre">expanse</span></code><a class="headerlink" href="#running-wrf-ideal-on-expanse" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.4. </span>Running WRF ideal on <code class="docutils literal notranslate"><span class="pre">expanse</span></code><a class="headerlink" href="#running-wrf-ideal-on-expanse" title="Permalink to this headline">¶</a></h2>
 <p>All right, you’re good to go.  Let’s try a test run.  At this point you can configure the <code class="docutils literal notranslate"><span class="pre">namelist.input</span></code> or input_sounding to what you would like for your particular run.</p>
 <p>You’ll need a <code class="docutils literal notranslate"><span class="pre">slurm</span></code> script for running your job - here is one you can save in the <code class="docutils literal notranslate"><span class="pre">test\em_quarter_ss</span></code> directory as <code class="docutils literal notranslate"><span class="pre">wrf_sbatch.sh</span></code>.  To create this file, open it in <code class="docutils literal notranslate"><span class="pre">nano</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano wrf_sbatch.sh
@@ -451,8 +461,8 @@ taskid: 0 hostname: exp-3-17
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Welcome to ATMS 597 SN, Spring 2021</a>
-    <a class='right-next' id="next-link" href="intro_to_wrf.html" title="next page"><span class="section-number">2. </span>Introduction to WRF presentation</a>
+    <a class='left-prev' id="prev-link" href="syllabus.html" title="previous page"><span class="section-number">1. </span>Syllabus</a>
+    <a class='right-next' id="next-link" href="intro_to_wrf.html" title="next page"><span class="section-number">3. </span>Introduction to the WRF system</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
