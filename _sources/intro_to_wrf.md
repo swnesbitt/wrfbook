@@ -1,4 +1,4 @@
-# Introduction to WRF presentation
+# Introduction to the WRF system
 
 Courtesy Wei Wang, NCAR
 
