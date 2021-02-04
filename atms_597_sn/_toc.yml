@@ -7,3 +7,4 @@
   chapters:
   - file: compiling_expanse
   - file: intro_to_wrf
+  - file: wrf_ideal
