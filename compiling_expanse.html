@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Chapter 1: Getting started on expanse &#8212; Mesoscale modeling with the Weather Research and Forecasting model</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to ATMS 597 SN, Spring 2021" href="intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Mesoscale modeling with the Weather Research and Forecasting model</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to ATMS 597 SN, Spring 2021
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Getting started
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Chapter 1: Getting started on
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     expanse
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/compiling_expanse.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-login-after-you-have-set-up-2-factor-authentication">
+   1.1. How to login (after you have set up 2-Factor Authentication)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#storage-on-expanse">
+   1.2. Storage on
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     expanse
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obtaining-and-compiling-wrf-on-expanse">
+   1.3. Obtaining and compiling WRF on expanse
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-wrf-from-github">
+     1.3.1. Download WRF from
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       github
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configuring-wrf">
+     1.3.2. Configuring WRF
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compiling-wrf">
+     1.3.3. Compiling WRF
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#running-wrf-ideal-on-expanse">
+   1.4. Running WRF ideal on
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     expanse
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="chapter-1-getting-started-on-expanse">
+<h1><span class="section-number">1. </span>Chapter 1: Getting started on <code class="docutils literal notranslate"><span class="pre">expanse</span></code><a class="headerlink" href="#chapter-1-getting-started-on-expanse" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="how-to-login-after-you-have-set-up-2-factor-authentication">
+<h2><span class="section-number">1.1. </span>How to login (after you have set up 2-Factor Authentication)<a class="headerlink" href="#how-to-login-after-you-have-set-up-2-factor-authentication" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh -l username login.xsede.org
+</pre></div>
+</div>
+<p>Answer 2FA prompts (with your phone)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gsissh expanse
+</pre></div>
+</div>
+<p>or, once you have done the above at least once</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh -l username login.expanse.sdsc.edu
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="storage-on-expanse">
+<h2><span class="section-number">1.2. </span>Storage on <code class="docutils literal notranslate"><span class="pre">expanse</span></code><a class="headerlink" href="#storage-on-expanse" title="Permalink to this headline">¶</a></h2>
+<p>There are 3 directories you can use on <code class="docutils literal notranslate"><span class="pre">expanse</span></code>.</p>
+<p>Your home directory is in</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/home/username
+</pre></div>
+</div>
+<p>and can be used for permanent files you want backed up.  There is limited space here (100 GB), and the compute nodes cannot see this directory.</p>
+<p>There is shared project space (2TB) for our class XSEDE account in the directory</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/expanse/lustre/projects/uic406/<span class="nv">$USER</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">$USER</span></code> is your <code class="docutils literal notranslate"><span class="pre">expanse</span></code> username.  This folder appears to not support batch job use.</p>
+<p>Scratch space is also provided at</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/expanse/lustre/scratch/<span class="nv">$USER</span>/temp_project
+</pre></div>
+</div>
+<p>This is the directory where you should run batch jobs.  It is not limited for space, but there is a user limit of 2 million files.  It is not backed up, so important results should be copied to other directories.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="obtaining-and-compiling-wrf-on-expanse">
+<h2><span class="section-number">1.3. </span>Obtaining and compiling WRF on expanse<a class="headerlink" href="#obtaining-and-compiling-wrf-on-expanse" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="download-wrf-from-github">
+<h3><span class="section-number">1.3.1. </span>Download WRF from <code class="docutils literal notranslate"><span class="pre">github</span></code><a class="headerlink" href="#download-wrf-from-github" title="Permalink to this headline">¶</a></h3>
+<p>You should download your WRF code do your home directory or the shared project space.</p>
+<div class="highlight-git notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/wrf-model/WRF.git
+</pre></div>
+</div>
+<p>This will download the code into a subdirectory called <code class="docutils literal notranslate"><span class="pre">WRF</span></code> in the current directory. Enter this directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> WRF
+</pre></div>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Note that the steps below must be done in one ssh session.  Library paths on <code class="docutils literal notranslate"><span class="pre">expanse</span></code> change from session to session, so you must start from here if you lose your connection.</p>
+</div>
+</div>
+<div class="section" id="configuring-wrf">
+<h3><span class="section-number">1.3.2. </span>Configuring WRF<a class="headerlink" href="#configuring-wrf" title="Permalink to this headline">¶</a></h3>
+<p>We will now configure WRF for compilation.  First, we need to set up the software environment for WRF.  <code class="docutils literal notranslate"><span class="pre">expanse</span></code> uses the <code class="docutils literal notranslate"><span class="pre">modules</span></code> package to configure software.  Here is the software environment we need for WRF:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module purge
+
+module load cpu intel mvapich2
+
+module load netcdf-c netcdf-cxx netcdf-fortran
+</pre></div>
+</div>
+<p>Next we need to find the NETCDF library path, and set an environment variable for it.  Run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="nv">$LD_LIBRARY_PATH</span> <span class="p">|</span> grep netcdf
+</pre></div>
+</div>
+<p>Grab the path that looks like this, containing <code class="docutils literal notranslate"><span class="pre">netcdf-fortran</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/cm/shared/apps/spack/cpu/opt/spack/linux-centos8-zen2/intel-19.1.1.217/netcdf-fortran-4.5.3-2wjlrztnogahr6sgpaxuwwd2mfl5ligr/
+</pre></div>
+</div>
+<p>and set the environment variable <code class="docutils literal notranslate"><span class="pre">NETCDF</span></code> to that path:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">NETCDF</span><span class="o">=</span>/cm/shared/apps/spack/cpu/opt/spack/linux-centos8-zen2/intel-19.1.1.217/netcdf-fortran-4.5.3-2wjlrztnogahr6sgpaxuwwd2mfl5ligr/
+</pre></div>
+</div>
+<p>Also, for performance increase over data output size, set the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">NETCDF_classic</span><span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+<p>Now run <code class="docutils literal notranslate"><span class="pre">configure</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./configure
+</pre></div>
+</div>
+<p>Select option 20, nesting option 1, and it should complete.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Edit the resulting configure.wrf, on the line that says <code class="docutils literal notranslate"><span class="pre">OPTAVX</span></code>, use a text editor such as <code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">configure.wrf</span></code> to change it to read:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">OPTAVX</span>          <span class="o">=</span>       -march<span class="o">=</span>core-avx2
+</pre></div>
+</div>
+</div>
+<p>Save the file and you’re good to go!</p>
+</div>
+<div class="section" id="compiling-wrf">
+<h3><span class="section-number">1.3.3. </span>Compiling WRF<a class="headerlink" href="#compiling-wrf" title="Permalink to this headline">¶</a></h3>
+<p>Now, you can compile WRF.  To compile the Quarter-circle hodograph supercell case on 4 processors, type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./compile -j <span class="m">4</span> em_quarter_ss
+</pre></div>
+</div>
+<p>After 20-30 minutes, you should get a “SUCCESS” message.  You shouldn’t ever have to recompile unless you need to change something in the fortran code or need to change the “Registry” - we’ll talk about this later in the semester.  If you get disconnected from the session, you will have to reconnect and start over from the configure step (due to the way the libraries are loaded on <code class="docutils literal notranslate"><span class="pre">expanse</span></code>).</p>
+</div>
+</div>
+<div class="section" id="running-wrf-ideal-on-expanse">
+<h2><span class="section-number">1.4. </span>Running WRF ideal on <code class="docutils literal notranslate"><span class="pre">expanse</span></code><a class="headerlink" href="#running-wrf-ideal-on-expanse" title="Permalink to this headline">¶</a></h2>
+<p>All right, you’re good to go.  Let’s try a test run.  At this point you can configure the <code class="docutils literal notranslate"><span class="pre">namelist.input</span></code> or input_sounding to what you would like for your particular run.</p>
+<p>You’ll need a <code class="docutils literal notranslate"><span class="pre">slurm</span></code> script for running your job - here is one you can save in the <code class="docutils literal notranslate"><span class="pre">test\em_quarter_ss</span></code> directory as <code class="docutils literal notranslate"><span class="pre">wrf_sbatch.sh</span></code>.  To create this file, open it in <code class="docutils literal notranslate"><span class="pre">nano</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano wrf_sbatch.sh
+</pre></div>
+</div>
+<p>and paste in the contents below (then write out the file and exit).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --job-name=&quot;idealwrf&quot; #NAME OF JOB NAME</span>
+<span class="c1">#SBATCH --output=&quot;wrf.em_q_ss.%j.%N.out&quot; #NAME OF LOG FILE</span>
+<span class="c1">#SBATCH --partition=compute #COMPUTE PARTITION</span>
+<span class="c1">#SBATCH --nodes=1 #HOW MANY NODES - EACH NODE HAS 64 PROCESSORS</span>
+<span class="c1">#SBATCH --ntasks-per-node=16 #HOW MANY PROCESSORS, IF YOU GO OVER 64, TAKE MORE NODES</span>
+<span class="c1">#SBATCH --mem=48G #RAM LIMIT</span>
+<span class="c1">#SBATCH --account=uic406 #ACCOUNT</span>
+<span class="c1">#SBATCH --export=ALL #WRITE LOGS?</span>
+<span class="c1">#SBATCH -t 01:30:00 #WALL TIME LIMIT</span>
+
+<span class="c1">#This job runs with 1 nodes, 16 cores per node for a total of 16 tasks.</span>
+
+<span class="c1">#LOAD SOFTWARE MODULES</span>
+module purge
+module load cpu intel mvapich2
+module load netcdf-c netcdf-cxx netcdf-fortran
+module load slurm
+
+<span class="c1">#RUN INITIALIZATION</span>
+srun --mpi<span class="o">=</span>pmi2 -n <span class="m">16</span> ideal.exe
+<span class="c1">#RUN MODEL</span>
+srun --mpi<span class="o">=</span>pmi2 -n <span class="m">16</span> wrf.exe
+</pre></div>
+</div>
+<p>When you’re ready to submit the job to the queue:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch wrf_sbatch.sh
+</pre></div>
+</div>
+<p>Which should respond with <code class="docutils literal notranslate"><span class="pre">Submitted</span> <span class="pre">batch</span> <span class="pre">job</span> <span class="pre">[job</span> <span class="pre">number]</span></code>.</p>
+<p>To check on the job status, type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>squeue -u $USER
+</pre></div>
+</div>
+<p>It will have an <code class="docutils literal notranslate"><span class="pre">R</span></code> next to the job if it is running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(base) [snesbitt@login01 em_quarter_ss]$ squeue -u snesbitt
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+           1164268   compute idealwrf snesbitt  R       0:07      1 exp-3-17
+</pre></div>
+</div>
+<p>When it is complete, a <code class="docutils literal notranslate"><span class="pre">C</span></code> should appear.</p>
+<p>You can also look at the contents of a file <code class="docutils literal notranslate"><span class="pre">rsl.out.0000</span></code>, which is a running log of the simulation.  It should give the status, and when WRF is running, it will show the current time of the simulation.</p>
+<p>Try <code class="docutils literal notranslate"><span class="pre">tail</span> <span class="pre">rsl.out.0000</span></code> during the simulation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(base) [snesbitt@login01 em_quarter_ss]$ tail rsl.out.0000
+Timing for main: time 0001-01-01_00:58:48 on domain   1:    0.00994 elapsed seconds
+Timing for main: time 0001-01-01_00:59:00 on domain   1:    0.00994 elapsed seconds
+Timing for main: time 0001-01-01_00:59:12 on domain   1:    0.01001 elapsed seconds
+Timing for main: time 0001-01-01_00:59:24 on domain   1:    0.00996 elapsed seconds
+</pre></div>
+</div>
+<p>And when it is completed successfully, <code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-u</span> </code> should say a <code class="docutils literal notranslate"><span class="pre">C</span></code> status, or nothing (it is out of the queue), and <code class="docutils literal notranslate"><span class="pre">tail</span> <span class="pre">rsl.out.0000</span></code> should show:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Timing for main: time 0001-01-01_00:59:36 on domain   1:    0.00995 elapsed seconds
+Timing for main: time 0001-01-01_00:59:48 on domain   1:    0.01000 elapsed seconds
+Timing for main: time 0001-01-01_01:00:00 on domain   1:    0.00997 elapsed seconds
+Timing for Writing wrfout_d01_0001-01-01_01:00:00 for domain        1:    0.10085 elapsed seconds
+d01 0001-01-01_01:00:00 wrf: SUCCESS COMPLETE WRF
+taskid: 0 hostname: exp-3-17
+(base) [snesbitt@login01 em_quarter_ss]$
+</pre></div>
+</div>
+<p>If there is an error, the log file will end prematurely before the job is completed in the queue.  Hopefully the error message you get is explanatory.  If you get stuck, message me on Slack!</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Welcome to ATMS 597 SN, Spring 2021</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Steve Nesbitt<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
