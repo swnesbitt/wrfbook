@@ -13,9 +13,9 @@ See the links at left to navigate through the course content.
 
 [WRF Online Tutorial](https://www2.mmm.ucar.edu/wrf/OnLineTutorial/index.php)
 
-[WRF cource code on `github`](https://github.com/wrf-model/WRF): `git clone https://github.com/wrf-model/WRF`
+[WRF source code on `github`](https://github.com/wrf-model/WRF): `git clone https://github.com/wrf-model/WRF`
 
-[WPS cource code on `github`](https://github.com/wrf-model/WPS): `git clone https://github.com/wrf-model/WPS`
+[WPS source code on `github`](https://github.com/wrf-model/WPS): `git clone https://github.com/wrf-model/WPS`
 
 [`wrf-python`](https://wrf-python.readthedocs.io/en/latest/)
 
