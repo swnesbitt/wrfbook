@@ -8,7 +8,7 @@ See the links at left to navigate through the course content.
 
 [WRF Users page at the DTC](https://www2.mmm.ucar.edu/wrf/users/)
 
-[wRF Tutorial](https://www2.mmm.ucar.edu/wrf/users/supports/tutorial.html)
+[WRF Tutorial 2021](https://www2.mmm.ucar.edu/wrf/users/tutorial/tutorial_presentation_winter_2021.htm)
 
 [WRF Online Tutorial](https://www2.mmm.ucar.edu/wrf/OnLineTutorial/index.php)
 
@@ -17,6 +17,8 @@ See the links at left to navigate through the course content.
 [WPS cource code on `github`](https://github.com/wrf-model/WPS): `git clone https://github.com/wrf-model/WPS`
 
 [`wrf-python`](https://wrf-python.readthedocs.io/en/latest/)
+
+[SDSC `expanse` Users' guide](https://www.sdsc.edu/support/user_guides/expanse.html)
 
 [`globus`](https://www.globus.org): `keeling` data transfer node: `sese#keeling-dtn`, `expanse` data transfer node: `XSEDE Expanse`
 ```
