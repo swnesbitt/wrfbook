@@ -137,6 +137,10 @@ Now, you can compile WRF.  To compile the Quarter-circle hodograph supercell cas
 
 After 20-30 minutes, you should get a "SUCCESS" message.  You shouldn't ever have to recompile unless you need to change something in the fortran code or need to change the "Registry" - we'll talk about this later in the semester.  If you get disconnected from the session, you will have to reconnect and start over from the configure step (due to the way the libraries are loaded on `expanse`).
 
+```{note}
+If something goes wrong during the compile process, be sure to start up at step 2.3.2.  In the top level `WRF` directory, run `./clean -a` to remove all compiled files, and configure and compile again.
+```
+
 ## Running WRF ideal on `expanse`
 
 All right, you're good to go.  Let's try a test run.  At this point you can configure the `namelist.input` or input_sounding to what you would like for your particular run.
