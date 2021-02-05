@@ -359,6 +359,10 @@ module load netcdf-c netcdf-cxx netcdf-fortran
 </pre></div>
 </div>
 <p>After 20-30 minutes, you should get a “SUCCESS” message.  You shouldn’t ever have to recompile unless you need to change something in the fortran code or need to change the “Registry” - we’ll talk about this later in the semester.  If you get disconnected from the session, you will have to reconnect and start over from the configure step (due to the way the libraries are loaded on <code class="docutils literal notranslate"><span class="pre">expanse</span></code>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If something goes wrong during the compile process, be sure to start up at step 2.3.2.  In the top level <code class="docutils literal notranslate"><span class="pre">WRF</span></code> directory, run <code class="docutils literal notranslate"><span class="pre">./clean</span> <span class="pre">-a</span></code> to remove all compiled files, and configure and compile again.</p>
+</div>
 </div>
 </div>
 <div class="section" id="running-wrf-ideal-on-expanse">
