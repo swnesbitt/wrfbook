@@ -1,7 +1,5 @@
 # Python on expanse
 
-===================
-
 ## Installing `python` and `jupyter notebooks` on expanse
 
 `python` is installed on a user basis.  Follow the directions here, under the section "Software Prerequisites": [https://hpc-training.sdsc.edu/notebooks-101/notebook-101.html#software-prerequisites](https://hpc-training.sdsc.edu/notebooks-101/notebook-101.html#software-prerequisites)
