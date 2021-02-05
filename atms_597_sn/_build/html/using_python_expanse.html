@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python on expanse &#8212; Mesoscale modeling with the Weather Research and Forecasting model</title>
+    <title>5. Python on expanse &#8212; Mesoscale modeling with the Weather Research and Forecasting model</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -56,6 +56,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="4. Introduction to WRF ideal" href="wrf_ideal.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -97,7 +98,7 @@
   Getting started
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="syllabus.html">
    1. Syllabus
@@ -121,6 +122,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="wrf_ideal.html">
    4. Introduction to WRF ideal
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   5. Python on expanse
   </a>
  </li>
 </ul>
@@ -195,7 +201,7 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#installing-python-and-jupyter-notebooks-on-expanse">
-   Installing
+   5.1. Installing
    <code class="docutils literal notranslate">
     <span class="pre">
      python
@@ -215,7 +221,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#installing-reverse-proxy-for-accessing-jupyter-notebooks">
-   Installing
+   5.2. Installing
    <code class="docutils literal notranslate">
     <span class="pre">
      reverse-proxy
@@ -226,7 +232,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#installing-required-python-packages-matplotlib-netcdf4-and-wrf-python-on-expanse">
-   Installing required python packages
+   5.3. Installing required python packages
    <code class="docutils literal notranslate">
     <span class="pre">
      matplotlib
@@ -249,12 +255,12 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#starting-up-a-jupyter-notebook">
-   Starting up a jupyter notebook
+   5.4. Starting up a jupyter notebook
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#basic-notebook-for-wrf-analysis">
-   Basic notebook for wrf-analysis
+   5.5. Basic notebook for wrf-analysis
   </a>
  </li>
 </ul>
@@ -269,24 +275,24 @@
               <div>
                 
   <div class="section" id="python-on-expanse">
-<h1>Python on expanse<a class="headerlink" href="#python-on-expanse" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5. </span>Python on expanse<a class="headerlink" href="#python-on-expanse" title="Permalink to this headline">¶</a></h1>
 <p>===================</p>
 <div class="section" id="installing-python-and-jupyter-notebooks-on-expanse">
-<h2>Installing <code class="docutils literal notranslate"><span class="pre">python</span></code> and <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebooks</span></code> on expanse<a class="headerlink" href="#installing-python-and-jupyter-notebooks-on-expanse" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1. </span>Installing <code class="docutils literal notranslate"><span class="pre">python</span></code> and <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebooks</span></code> on expanse<a class="headerlink" href="#installing-python-and-jupyter-notebooks-on-expanse" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">python</span></code> is installed on a user basis.  Follow the directions here, under the section “Software Prerequisites”: <a class="reference external" href="https://hpc-training.sdsc.edu/notebooks-101/notebook-101.html#software-prerequisites">https://hpc-training.sdsc.edu/notebooks-101/notebook-101.html#software-prerequisites</a></p>
 </div>
 <div class="section" id="installing-reverse-proxy-for-accessing-jupyter-notebooks">
-<h2>Installing <code class="docutils literal notranslate"><span class="pre">reverse-proxy</span></code> for accessing jupyter notebooks<a class="headerlink" href="#installing-reverse-proxy-for-accessing-jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.2. </span>Installing <code class="docutils literal notranslate"><span class="pre">reverse-proxy</span></code> for accessing jupyter notebooks<a class="headerlink" href="#installing-reverse-proxy-for-accessing-jupyter-notebooks" title="Permalink to this headline">¶</a></h2>
 <p>We’ll follow the directions here: <a class="reference external" href="https://hpc-training.sdsc.edu/notebooks-101/notebook-101.html#security-with-reverse-proxy-service">https://hpc-training.sdsc.edu/notebooks-101/notebook-101.html#security-with-reverse-proxy-service</a></p>
 </div>
 <div class="section" id="installing-required-python-packages-matplotlib-netcdf4-and-wrf-python-on-expanse">
-<h2>Installing required python packages <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">netcdf4</span></code>, and <code class="docutils literal notranslate"><span class="pre">wrf-python</span></code> on expanse<a class="headerlink" href="#installing-required-python-packages-matplotlib-netcdf4-and-wrf-python-on-expanse" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.3. </span>Installing required python packages <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">netcdf4</span></code>, and <code class="docutils literal notranslate"><span class="pre">wrf-python</span></code> on expanse<a class="headerlink" href="#installing-required-python-packages-matplotlib-netcdf4-and-wrf-python-on-expanse" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge matplotlib wrf-python
 </pre></div>
 </div>
 </div>
 <div class="section" id="starting-up-a-jupyter-notebook">
-<h2>Starting up a jupyter notebook<a class="headerlink" href="#starting-up-a-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4. </span>Starting up a jupyter notebook<a class="headerlink" href="#starting-up-a-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>base<span class="o">)</span> <span class="o">[</span>snesbitt@login02 reverse-proxy<span class="o">]</span>$ ./start-jupyter -A uic406
 Your notebook is here:
 	https://census-dragging-repent.expanse-user-content.sdsc.edu?token<span class="o">=</span>fef373e07c8b0736c2ecc3219fd962e9
@@ -299,7 +305,7 @@ You may occasionally run the <span class="nb">command</span> <span class="s1">&#
 </div>
 </div>
 <div class="section" id="basic-notebook-for-wrf-analysis">
-<h2>Basic notebook for wrf-analysis<a class="headerlink" href="#basic-notebook-for-wrf-analysis" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.5. </span>Basic notebook for wrf-analysis<a class="headerlink" href="#basic-notebook-for-wrf-analysis" title="Permalink to this headline">¶</a></h2>
 <p>Paste the text into the notebook cells, press Control-Enter (PC) or Command-Return (Mac)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># set up plotting and matplotlib</span>
 <span class="o">%</span><span class="n">pylab</span> <span class="n">inline</span>
@@ -351,6 +357,7 @@ You may occasionally run the <span class="nb">command</span> <span class="s1">&#
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="wrf_ideal.html" title="previous page"><span class="section-number">4. </span>Introduction to WRF ideal</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
