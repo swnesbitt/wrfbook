@@ -13,7 +13,7 @@ We'll follow the directions here: [https://hpc-training.sdsc.edu/notebooks-101/n
 ## Installing required python packages `matplotlib`, `netcdf4`, and `wrf-python` on expanse
 
 ```bash
-conda install -c conda-forge matplotlib wrf-python
+conda install -c conda-forge matplotlib netcdf4 wrf-python
 ```
 
 ## Starting up a jupyter notebook
