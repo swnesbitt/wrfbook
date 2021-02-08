@@ -56,7 +56,7 @@ This is the directory where you should run batch jobs.  It is not limited for sp
 
 You should download your WRF code do your home directory or the shared project space.
 
-```git
+```bash
 git clone https://github.com/wrf-model/WRF.git
 ```
 
