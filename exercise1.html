@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>7. Fundamentals in Numerical Weather Prediction &#8212; Mesoscale modeling with the Weather Research and Forecasting model</title>
+    <title>7. Exercise 1: Creating an ensemble &#8212; Mesoscale modeling with the Weather Research and Forecasting model</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -136,7 +136,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   7. Fundamentals in Numerical Weather Prediction
+   7. Exercise 1: Creating an ensemble
   </a>
  </li>
 </ul>
@@ -211,14 +211,14 @@
         
               <div>
                 
-  <div class="section" id="fundamentals-in-numerical-weather-prediction">
-<h1><span class="section-number">7. </span>Fundamentals in Numerical Weather Prediction<a class="headerlink" href="#fundamentals-in-numerical-weather-prediction" title="Permalink to this headline">¶</a></h1>
-<p>Courtesy Song-Yu Hong (NCAR affiliate scientist)</p>
-<object data="https://www2.mmm.ucar.edu/wrf/users/tutorial/202101/hong_fundamentals.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="https://www2.mmm.ucar.edu/wrf/users/tutorial/202101/hong_fundamentals.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://www2.mmm.ucar.edu/wrf/users/tutorial/202101/hong_fundamentals.pdf">Download PDF</a>.</p>
-    </embed>
-</object></div>
+  <div class="section" id="exercise-1-creating-an-ensemble">
+<h1><span class="section-number">7. </span>Exercise 1: Creating an ensemble<a class="headerlink" href="#exercise-1-creating-an-ensemble" title="Permalink to this headline">¶</a></h1>
+<p>For this exercise, we will use the <code class="docutils literal notranslate"><span class="pre">em_quarter_ss</span></code> simulation.</p>
+<p>A best practice is to have your code base stored in a directory (in the projects directory, for example) and then copy your code base to a working directory (preferably in scratch space where disk access is high speed).  You can then archive those simulations (or just the namelist, input data, and output in a different directory).</p>
+<p>You can use your batch script to manage these work flows.</p>
+<p>Please run <code class="docutils literal notranslate"><span class="pre">ideal.exe</span></code> and <code class="docutils literal notranslate"><span class="pre">wrf.exe</span></code> and modify the namelist to write output (<code class="docutils literal notranslate"><span class="pre">history_interval</span></code>) every 5 minutes.</p>
+<p>Create simulations that modify the <code class="docutils literal notranslate"><span class="pre">mp_physics</span></code> in <code class="docutils literal notranslate"><span class="pre">namelist.input</span></code> to run the model with options 1, 2, 6, 8, 10 and run .  Be sure that you save the output for each of these simulations (and their <code class="docutils literal notranslate"><span class="pre">namelist.input</span></code> files).</p>
+</div>
 
     <script type="text/x-thebe-config">
     {
