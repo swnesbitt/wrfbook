@@ -1,4 +1,4 @@
-# Introduction to the WRF system
+# Fundamentals in Numerical Weather Prediction
 
 Courtesy Song-Yu Hong (NCAR affiliate scientist)
 
