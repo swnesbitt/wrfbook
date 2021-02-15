@@ -1,0 +1,54 @@
+Traceback (most recent call last):
+  File "/Users/snesbitt/miniforge3/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/snesbitt/miniforge3/lib/python3.8/site-packages/nbclient/client.py", line 1087, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/snesbitt/miniforge3/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/snesbitt/miniforge3/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/snesbitt/miniforge3/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/Users/snesbitt/miniforge3/lib/python3.8/site-packages/nbclient/client.py", line 540, in async_execute
+    await self.async_execute_cell(
+  File "/Users/snesbitt/miniforge3/lib/python3.8/site-packages/nbclient/client.py", line 832, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/Users/snesbitt/miniforge3/lib/python3.8/site-packages/nbclient/client.py", line 740, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Open a netCDF data file using xarray default engine and load the data into xarrays
+
+path = '/expanse/lustre/projects/uic406/snesbitt/em_quarter_ss/mp10/'
+
+ncfile = Dataset('wrfout_d01_0001-01-01_00:00:00')
+
+# Extract slices of lon and lat
+# Read in data from netCDF file.
+# Note that when we extract ``u`` and ``v`` from the file,
+
+# Extract the Geopotential Height and wind fields
+z = getvar(ncfile, "z", timeidx = ALL_TIMES)
+ua = getvar(ncfile, "ua", timeidx = ALL_TIMES)
+va = getvar(ncfile, "va", timeidx = ALL_TIMES)
+wa = getvar(ncfile, "wa", timeidx = ALL_TIMES)
+
+
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+[0;32m<ipython-input-2-f1733b34e037>[0m in [0;36m<module>[0;34m[0m
+[1;32m      3[0m [0mpath[0m [0;34m=[0m [0;34m'/expanse/lustre/projects/uic406/snesbitt/em_quarter_ss/mp10/'[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0;34m[0m[0m
+[0;32m----> 5[0;31m [0mncfile[0m [0;34m=[0m [0mDataset[0m[0;34m([0m[0;34m'wrfout_d01_0001-01-01_00:00:00'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      6[0m [0;34m[0m[0m
+[1;32m      7[0m [0;31m# Extract slices of lon and lat[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32mnetCDF4/_netCDF4.pyx[0m in [0;36mnetCDF4._netCDF4.Dataset.__init__[0;34m()[0m
+
+[0;32mnetCDF4/_netCDF4.pyx[0m in [0;36mnetCDF4._netCDF4._ensure_nc_success[0;34m()[0m
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: b'wrfout_d01_0001-01-01_00:00:00'
+FileNotFoundError: [Errno 2] No such file or directory: b'wrfout_d01_0001-01-01_00:00:00'
+

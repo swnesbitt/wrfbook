@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9. Basic Interactive Plot Example &#8212; Mesoscale modeling with the Weather Research and Forecasting model</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="8. The WRF ARW Dynamic Core" href="dynamics.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Mesoscale modeling with the Weather Research and Forecasting model</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to ATMS 597 SN, Spring 2021
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Getting started
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="syllabus.html">
+   1. Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="compiling_expanse.html">
+   2. Getting started on
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     expanse
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_to_wrf.html">
+   3. Introduction to the WRF system
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wrf_ideal.html">
+   4. Introduction to WRF ideal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="using_python_expanse.html">
+   5. Python on expanse
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fundamentals.html">
+   6. Fundamentals in Numerical Weather Prediction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercise1.html">
+   7. Exercise 1: Creating an ensemble
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dynamics.html">
+   8. The WRF ARW Dynamic Core
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   9. Basic Interactive Plot Example
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/basic_interactive_plot.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/basic_interactive_plot.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="basic-interactive-plot-example">
+<h1><span class="section-number">9. </span>Basic Interactive Plot Example<a class="headerlink" href="#basic-interactive-plot-example" title="Permalink to this headline">¶</a></h1>
+<p>Requires <code class="docutils literal notranslate"><span class="pre">wrf-python</span></code> and <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">netCDF4</span> <span class="kn">import</span> <span class="n">Dataset</span>
+<span class="kn">from</span> <span class="nn">wrf</span> <span class="kn">import</span> <span class="n">getvar</span><span class="p">,</span> <span class="n">interplevel</span><span class="p">,</span> <span class="n">ALL_TIMES</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interactive</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open a netCDF data file using xarray default engine and load the data into xarrays</span>
+
+<span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/expanse/lustre/projects/uic406/snesbitt/em_quarter_ss/mp10/&#39;</span>
+
+<span class="n">ncfile</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="s1">&#39;wrfout_d01_0001-01-01_00:00:00&#39;</span><span class="p">)</span>
+
+<span class="c1"># Extract slices of lon and lat</span>
+<span class="c1"># Read in data from netCDF file.</span>
+<span class="c1"># Note that when we extract ``u`` and ``v`` from the file,</span>
+
+<span class="c1"># Extract the Geopotential Height and wind fields</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">getvar</span><span class="p">(</span><span class="n">ncfile</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="n">timeidx</span> <span class="o">=</span> <span class="n">ALL_TIMES</span><span class="p">)</span>
+<span class="n">ua</span> <span class="o">=</span> <span class="n">getvar</span><span class="p">(</span><span class="n">ncfile</span><span class="p">,</span> <span class="s2">&quot;ua&quot;</span><span class="p">,</span> <span class="n">timeidx</span> <span class="o">=</span> <span class="n">ALL_TIMES</span><span class="p">)</span>
+<span class="n">va</span> <span class="o">=</span> <span class="n">getvar</span><span class="p">(</span><span class="n">ncfile</span><span class="p">,</span> <span class="s2">&quot;va&quot;</span><span class="p">,</span> <span class="n">timeidx</span> <span class="o">=</span> <span class="n">ALL_TIMES</span><span class="p">)</span>
+<span class="n">wa</span> <span class="o">=</span> <span class="n">getvar</span><span class="p">(</span><span class="n">ncfile</span><span class="p">,</span> <span class="s2">&quot;wa&quot;</span><span class="p">,</span> <span class="n">timeidx</span> <span class="o">=</span> <span class="n">ALL_TIMES</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="n">f1733b34e037</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/expanse/lustre/projects/uic406/snesbitt/em_quarter_ss/mp10/&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">ncfile</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="s1">&#39;wrfout_d01_0001-01-01_00:00:00&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># Extract slices of lon and lat</span>
+
+<span class="nn">netCDF4/_netCDF4.pyx</span> in <span class="ni">netCDF4._netCDF4.Dataset.__init__</span><span class="nt">()</span>
+
+<span class="nn">netCDF4/_netCDF4.pyx</span> in <span class="ni">netCDF4._netCDF4._ensure_nc_success</span><span class="nt">()</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: b&#39;wrfout_d01_0001-01-01_00:00:00&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_interact</span><span class="p">(</span><span class="n">tindex</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+    <span class="n">ua_interp</span> <span class="o">=</span> <span class="n">interplevel</span><span class="p">(</span><span class="n">ua</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+    <span class="n">va_interp</span> <span class="o">=</span> <span class="n">interplevel</span><span class="p">(</span><span class="n">va</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+    <span class="n">wa_interp</span> <span class="o">=</span> <span class="n">interplevel</span><span class="p">(</span><span class="n">wa</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+
+    <span class="n">fig1</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+    
+    <span class="n">cb</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="s1">&#39;west_east&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                   <span class="n">z</span><span class="p">[</span><span class="s1">&#39;south_north&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+               <span class="n">wa_interp</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="n">tindex</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral_r&#39;</span><span class="p">)</span>
+
+    <span class="n">Q</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="s1">&#39;west_east&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                   <span class="n">z</span><span class="p">[</span><span class="s1">&#39;south_north&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                   <span class="n">ua_interp</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="n">tindex</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                   <span class="n">va_interp</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="n">tindex</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">pivot</span><span class="o">=</span><span class="s1">&#39;middle&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+                   <span class="n">units</span><span class="o">=</span><span class="s1">&#39;width&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mf">0.0007</span><span class="p">,</span><span class="n">headwidth</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    
+    <span class="n">qk</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">quiverkey</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="mf">0.92</span><span class="p">,</span> <span class="o">.</span><span class="mi">95</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$5 \frac</span><span class="si">{m}{s}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">labelpos</span><span class="o">=</span><span class="s1">&#39;E&#39;</span><span class="p">,</span>
+                       <span class="n">coordinates</span><span class="o">=</span><span class="s1">&#39;figure&#39;</span><span class="p">)</span>
+
+    <span class="n">cb</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cb</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Vertical wind (m/s)&#39;</span><span class="p">)</span>
+
+    <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Vertical motion (m/s) and winds (m/s) at time=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">tindex</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; and level=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">level</span><span class="p">))</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">interactive_plot</span> <span class="o">=</span> <span class="n">interactive</span><span class="p">(</span><span class="n">plot_interact</span><span class="p">,</span> <span class="n">tindex</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">13</span><span class="p">),</span> <span class="n">level</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20000</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">interactive_plot</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">output</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="s1">&#39;500px&#39;</span>
+<span class="n">interactive_plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "96d15655bae4488d99265ef968ff0d0f", "version_major": 2, "version_minor": 0}
+</script><img alt="_images/basic_interactive_plot_3_1.png" src="_images/basic_interactive_plot_3_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">ua_interp</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">va_interp</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">34</span><span class="o">-</span><span class="n">aa70d6a631e3</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">40</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">40</span><span class="p">),</span><span class="n">ua_interp</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">va_interp</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+<span class="nn">~/miniforge3/envs/py3/lib/python3.8/site-packages/matplotlib/pyplot.py</span> in <span class="ni">quiver</span><span class="nt">(data, *args, **kw)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2869</span> <span class="nd">@_copy_docstring_and_deprecators</span><span class="p">(</span><span class="n">Axes</span><span class="o">.</span><span class="n">quiver</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2870</span> <span class="k">def</span> <span class="nf">quiver</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">2871</span>     <span class="n">__ret</span> <span class="o">=</span> <span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2872</span>         <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="p">({</span><span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">}</span> <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">{}),</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2873</span>     <span class="n">sci</span><span class="p">(</span><span class="n">__ret</span><span class="p">)</span>
+
+<span class="nn">~/miniforge3/envs/py3/lib/python3.8/site-packages/matplotlib/__init__.py</span> in <span class="ni">inner</span><span class="nt">(ax, data, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1445</span>     <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1446</span>         <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1447</span>             <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="nb">map</span><span class="p">(</span><span class="n">sanitize_sequence</span><span class="p">,</span> <span class="n">args</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1448</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1449</span>         <span class="n">bound</span> <span class="o">=</span> <span class="n">new_sig</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">~/miniforge3/envs/py3/lib/python3.8/site-packages/matplotlib/axes/_axes.py</span> in <span class="ni">quiver</span><span class="nt">(self, *args, **kw)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5019</span>         <span class="n">args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_quiver_units</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kw</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5020</span> 
+<span class="ne">-&gt; </span><span class="mi">5021</span>         <span class="n">q</span> <span class="o">=</span> <span class="n">mquiver</span><span class="o">.</span><span class="n">Quiver</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">5022</span> 
+<span class="g g-Whitespace">   </span><span class="mi">5023</span>         <span class="bp">self</span><span class="o">.</span><span class="n">add_collection</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">autolim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nn">~/miniforge3/envs/py3/lib/python3.8/site-packages/matplotlib/quiver.py</span> in <span class="ni">__init__</span><span class="nt">(self, ax, scale, headwidth, headlength, headaxislength, minshaft, minlength, units, scale_units, angles, width, color, pivot, *args, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">501</span>                                              <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">502</span>         <span class="bp">self</span><span class="o">.</span><span class="n">polykw</span> <span class="o">=</span> <span class="n">kw</span>
+<span class="ne">--&gt; </span><span class="mi">503</span>         <span class="bp">self</span><span class="o">.</span><span class="n">set_UVC</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">C</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_initialized</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">505</span> 
+
+<span class="nn">~/miniforge3/envs/py3/lib/python3.8/site-packages/matplotlib/quiver.py</span> in <span class="ni">set_UVC</span><span class="nt">(self, U, V, C)</span>
+<span class="g g-Whitespace">    </span><span class="mi">574</span>         <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">var</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">((</span><span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">),</span> <span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">C</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">575</span>             <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">var</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">var</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">N</span> <span class="ow">or</span> <span class="n">var</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">576</span>                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Argument </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> has a size </span><span class="si">{</span><span class="n">var</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">577</span>                                  <span class="sa">f</span><span class="s1">&#39; which does not match </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">N</span><span class="si">}</span><span class="s1">,&#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">578</span>                                  <span class="s1">&#39; the number of arrow positions&#39;</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: Argument U has a size 1681 which does not match 40, the number of arrow positions
+</pre></div>
+</div>
+<img alt="_images/basic_interactive_plot_4_1.png" src="_images/basic_interactive_plot_4_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">west_east</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">z</span><span class="o">.</span><span class="n">south_north</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0,  1,  2, ..., 38, 39, 40],
+       [ 0,  1,  2, ..., 38, 39, 40],
+       [ 0,  1,  2, ..., 38, 39, 40],
+       ...,
+       [ 0,  1,  2, ..., 38, 39, 40],
+       [ 0,  1,  2, ..., 38, 39, 40],
+       [ 0,  1,  2, ..., 38, 39, 40]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0,  0,  0, ...,  0,  0,  0],
+       [ 1,  1,  1, ...,  1,  1,  1],
+       [ 2,  2,  2, ...,  2,  2,  2],
+       ...,
+       [38, 38, 38, ..., 38, 38, 38],
+       [39, 39, 39, ..., 39, 39, 39],
+       [40, 40, 40, ..., 40, 40, 40]])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "py3"
+        },
+        kernelOptions: {
+            kernelName: "py3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'py3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="dynamics.html" title="previous page"><span class="section-number">8. </span>The WRF ARW Dynamic Core</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Steve Nesbitt<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
