@@ -13,3 +13,5 @@
   - file: fundamentals
   - file: exercise1
   - file: dynamics
+  - file: basic_interactive_plot
+  - file: experiments_numerics
