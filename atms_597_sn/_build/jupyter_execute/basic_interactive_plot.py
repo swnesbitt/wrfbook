@@ -1,14 +1,8 @@
-#!/usr/bin/env python
-# coding: utf-8
+# Basic Interactive Plot Example
 
-# # Basic Interactive Plot Example
-# 
-# Requires `wrf-python` and `ipywidgets`
+Requires `wrf-python` and `ipywidgets`
 
-# In[1]:
-
-
-get_ipython().run_line_magic('matplotlib', 'inline')
+%matplotlib inline
 
 import matplotlib.pyplot as plt
 
@@ -17,10 +11,6 @@ from datetime import datetime
 from netCDF4 import Dataset
 from wrf import getvar, interplevel, ALL_TIMES
 from ipywidgets import interactive
-
-
-# In[78]:
-
 
 # Open a netCDF data file using xarray default engine and load the data into xarrays
 
@@ -38,8 +28,6 @@ ua = getvar(ncfile, "ua", timeidx = ALL_TIMES)
 va = getvar(ncfile, "va", timeidx = ALL_TIMES)
 wa = getvar(ncfile, "wa", timeidx = ALL_TIMES)
 
-
-# In[88]:
 
 
 
@@ -75,33 +63,11 @@ output = interactive_plot.children[-1]
 output.layout.height = '500px'
 interactive_plot
 
-
-# In[34]:
-
-
 plt.quiver(x,ua_interp.values, va_interp.values)
-
-
-# In[39]:
-
 
 x,y = np.meshgrid(z.west_east.values,z.south_north.values)
 
-
-# In[40]:
-
-
 x
 
-
-# In[41]:
-
-
 y
-
-
-# In[ ]:
-
-
-
 

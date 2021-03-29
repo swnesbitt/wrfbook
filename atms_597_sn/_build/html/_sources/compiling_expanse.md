@@ -157,7 +157,7 @@ and paste in the contents below (then write out the file and exit).
 #!/bin/bash
 #SBATCH --job-name="idealwrf" #NAME OF JOB NAME
 #SBATCH --output="wrf.em_q_ss.%j.%N.out" #NAME OF LOG FILE
-#SBATCH --partition=compute #COMPUTE PARTITION
+#SBATCH --partition=shared #SHARED PARTITION
 #SBATCH --nodes=1 #HOW MANY NODES - EACH NODE HAS 64 PROCESSORS
 #SBATCH --ntasks-per-node=16 #HOW MANY PROCESSORS, IF YOU GO OVER 64, TAKE MORE NODES
 #SBATCH --mem=48G #RAM LIMIT
