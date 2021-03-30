@@ -19,3 +19,4 @@
 - part: WRF Preprocessing System
   chapters:
   - file: compiling_expanse_wps
+  - file: running_wps
